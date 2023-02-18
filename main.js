@@ -31,6 +31,7 @@ let Delete = document.createElement("button")
 Delete.innerText = "delete"
 storeData.appendChild(Delete)
 
+
 add.addEventListener("click", () =>{
     if (input.value != "") {
         inputdata.value = input.value
@@ -41,13 +42,16 @@ add.addEventListener("click", () =>{
     }
 })
 edit.addEventListener("click", () =>{
-    edit.innerText = "save"
-    inputdata.readOnly = false
-    // if (condition) {
-        
-    // } else {
-        
-    // }
+    
+    if (edit.innerText == "edit") {
+
+        edit.innerText = "save"
+        inputdata.readOnly = false
+
+    } else {
+        edit.innerText = "edit"
+        inputdata.readOnly = true
+    }
 })
 Delete.addEventListener("click", () =>{
     maindiv.removeChild(storeData)
